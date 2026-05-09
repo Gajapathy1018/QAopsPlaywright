@@ -1,0 +1,11 @@
+Create Booking Response: {
+  bookingid: 2300,
+  booking: {
+    firstname: 'Gajapathy',
+    lastname: 'D R',
+    totalprice: 12000,
+    depositpaid: true,
+    bookingdates: { checkin: '2026-09-01', checkout: '2026-09-11' },
+    additionalneeds: 'Breakfast and Lunch'
+  }
+}

@@ -1,0 +1,3 @@
+Response Body: { token: 'c19da8cee4b7be6' }
+Token: c19da8cee4b7be6
+200

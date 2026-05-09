@@ -1,0 +1,44 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: api/get-method.spec.js >> GET call test
+- Location: tests/api/get-method.spec.js:9:5
+
+# Error details
+
+```
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: [Function status]
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test'
+  2  | import { loadTestData } from '../../utils/test-data-loader'
+  3  | 
+  4  | let payload
+  5  | test.beforeAll(async () => {
+  6  |     payload = await loadTestData('./test-data/api-data/user.json')
+  7  | })
+  8  | 
+  9  | test('GET call test', async ({ request }) => {
+  10 |     const response = await request.post('https://restful-booker.herokuapp.com/auth', {
+  11 |         headers: {
+  12 |             'Content-Type': 'application/json'
+  13 |         },
+  14 |         data: payload
+  15 |     })
+  16 |     const responseBody = await response.json()
+> 17 |     expect(response.status).toBe(200)
+     |                             ^ Error: expect(received).toBe(expected) // Object.is equality
+  18 | 
+  19 | })
+```
