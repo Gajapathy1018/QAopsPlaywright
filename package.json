@@ -5,6 +5,7 @@
   "scripts": {
     "test": "npx playwright test --headed",
     "uimode": "npx playwright test --ui",
+    "apitest": "npx playwright test  tests/api/get-method.spec.js --headed",
     "debug": "npx playwright test --debug",
     "singlespec": "npx playwright test tests/login.spec.js",
     "report": "npx allure generate allure-results --clean -o allure-report"

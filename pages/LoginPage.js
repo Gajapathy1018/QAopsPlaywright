@@ -17,7 +17,6 @@ class LoginPage {
         console.log('Username and password filled: ' + username + ', ' + password)
         await this.radioAudioCaptionButton.check()
         await this.loginButton.click()
-        await this.page.pause();
     }
     async validateInvalidUserName() {
         await this.page.on('dialog', async dialog => {

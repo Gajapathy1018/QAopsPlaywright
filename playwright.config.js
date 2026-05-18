@@ -14,6 +14,10 @@ import { defineConfig, devices } from '@playwright/test';
  */
 export default defineConfig({
   testDir: './tests',
+  timeout: 30 * 1000,
+  expect: {
+    timeout: 5000
+  },
   testMatch: '**/*.spec.js',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -24,7 +28,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html'],['line'],
+  reporter: [['html'], ['line'],
   ['allure-playwright']],
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -33,13 +37,13 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'on',
     headless: false,
     launchOptions: {
-    args: ['--start-maximized'],
-    
-  },
-   screenshot: 'on'
+      args: ['--start-maximized'],
+
+    },
+    screenshot: 'on'
   },
 
   /* Configure projects for major browsers */
