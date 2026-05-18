@@ -12,8 +12,6 @@ test('links map test', async ({ page }) => {
         const link= await links.nth(i).getAttribute('href');
         const text= await links.nth(i).innerText();
         linkMap.set(text, link);
-        //console.log(`Link ${i}: ${link}`);
-       // console.log(`${i}: ${text} -> ${link}`);
     }
 
     // You can now use linkMap for your assertions or further processing
